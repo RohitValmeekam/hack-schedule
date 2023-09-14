@@ -1,0 +1,107 @@
+body {
+  background-color: #282c35;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.schedule-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.calendar-month {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #F15C4B;
+  padding: 10px 0;
+  grid-column: span 7;
+}
+
+.calendar-day {
+  padding: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #F15C4B;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+.calendar-day:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #EBD9C8;
+}
+
+.selected {
+  background-color: #dcb38d;
+  color: #fff;
+  border-color: transparent;
+}
+
+.selected-date {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.selected-date p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e68a00;
+}
+
+.schedule {
+  margin-right: 40%;
+  flex: 1;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.no-events {
+  color: #999;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* screen size adjustment */
+@media (max-width: 1000px) {
+  .schedule-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar {
+    margin: 0 auto;
+    max-width: 90%;
+    margin-right: 5%;
+  }
+}
+@media (min-width: 1001px) {
+  .calendar {
+    margin-left: 20%;
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+  .calendar {
+    margin-right: 5%;
+  }
+}
